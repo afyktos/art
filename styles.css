@@ -8,3 +8,19 @@
 .art img{display:block;width:100%;height:100%;object-fit:cover}
 .project-wide .art{aspect-ratio:2/1}
 @media(max-width:720px){.project-wide .art{aspect-ratio:1}}
+
+/* Monochrome edition */
+:root{--bg:#050505;--fg:#f4f4f1;--muted:#9b9b97;--line:#292929;--accent:#fff}
+.hero-mark{color:#101010}
+.work-section{background:#080808;color:var(--fg)}
+.section-heading p,.project-info p,.placeholder-note{color:var(--muted)}
+.filters{border-top-color:#303030}
+.filter{border-color:#3a3a3a;color:var(--fg)}
+.filter.active,.filter:hover{background:#fff;color:#050505;border-color:#fff}
+.project-info{border-top-color:#333}
+.contact{background:#fff;color:#050505}
+.contact .eyebrow{color:#555}
+.contact-footer{border-top-color:#aaa}
+.brand{display:flex;align-items:center;width:138px;height:58px;overflow:hidden}
+.brand img{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:720px){.brand{width:112px;height:48px}}

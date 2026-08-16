@@ -48,9 +48,14 @@
       </div>
 
       <div class="project-grid">
-        <article class="project project-large" data-category="cover" tabindex="0" data-title="Dirty Soap" data-meta="Album artwork / 2026">
-          <div class="art"><img src="images/project-01.jpg" alt="Dirty Soap artwork"></div>
-          <div class="project-info"><h3>Dirty Soap</h3><p>Album artwork · 2026</p></div>
+        <article class="project project-large featured-project" data-category="cover physical" tabindex="0"
+          data-title="RocAmeriKKKa III"
+          data-meta="Flee Lord × Eto · Art direction & physical packaging · 2025"
+          data-description="Art direction, front and back cover design, physical packaging and merchandise for Flee Lord and Eto's third RocAmeriKKKa album. Featuring Conway the Machine, NEMS, Vel Nine, Starz Coleman and Mummz."
+          data-hover="images/rocamerikkka/front.jpg|images/rocamerikkka/vinyl-blue-front.jpg|images/rocamerikkka/cd-front.png|images/rocamerikkka/cap-front.jpg"
+          data-gallery="images/rocamerikkka/front.jpg|images/rocamerikkka/back.jpg|images/rocamerikkka/vinyl-obi-front.jpg|images/rocamerikkka/vinyl-obi-back.jpg|images/rocamerikkka/vinyl-blue-front.jpg|images/rocamerikkka/vinyl-blue-back.jpg|images/rocamerikkka/vinyl-black-front.jpg|images/rocamerikkka/vinyl-black-back.jpg|images/rocamerikkka/cd-front.png|images/rocamerikkka/cd-back.png|images/rocamerikkka/cap-front.jpg|images/rocamerikkka/cap-back.jpg">
+          <div class="art"><img src="images/rocamerikkka/front.jpg" alt="RocAmeriKKKa III cover artwork"><span class="hover-hint">HOVER TO EXPLORE</span></div>
+          <div class="project-info"><h3>RocAmeriKKKa III</h3><p>Flee Lord × Eto · Full campaign · 2025</p></div>
         </article>
         <article class="project" data-category="physical" tabindex="0" data-title="Digi Scale" data-meta="Physical editions / 2025">
           <div class="art"><img src="images/project-02.jpg" alt="Digi Scale physical edition"></div>
@@ -73,7 +78,7 @@
           <div class="project-info"><h3>Tha Mobsta</h3><p>Promo artwork · 2026</p></div>
         </article>
       </div>
-      <p class="placeholder-note">Temporary visual placeholders — ready for your final artwork.</p>
+      <p class="placeholder-note">RocAmeriKKKa III — full case study. Remaining projects are being curated.</p>
     </section>
 
     <section class="about" id="about">
@@ -105,8 +110,17 @@
 
   <dialog class="project-modal" aria-labelledby="modal-title">
     <button class="modal-close" aria-label="Close project">CLOSE ×</button>
-    <div class="modal-art"></div>
-    <div><h2 id="modal-title"></h2><p class="modal-meta"></p></div>
+    <div class="modal-viewer">
+      <button class="modal-arrow modal-prev" aria-label="Previous image">←</button>
+      <img class="modal-main" src="" alt="">
+      <button class="modal-arrow modal-next" aria-label="Next image">→</button>
+      <span class="modal-count"></span>
+    </div>
+    <div class="modal-copy">
+      <div><h2 id="modal-title"></h2><p class="modal-meta"></p></div>
+      <p class="modal-description"></p>
+    </div>
+    <div class="modal-thumbs" aria-label="Project gallery"></div>
   </dialog>
   <script src="script.js"></script>
 </body>

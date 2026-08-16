@@ -24,3 +24,22 @@
 .brand{display:flex;align-items:center;width:138px;height:58px;overflow:hidden}
 .brand img{display:block;width:100%;height:100%;object-fit:cover}
 @media(max-width:720px){.brand{width:112px;height:48px}}
+
+/* RocAmeriKKKa III case study */
+.art img{transition:opacity .25s ease}.art img.switching{opacity:.12}
+.hover-hint{position:absolute;right:12px;bottom:12px;padding:7px 9px;background:rgba(0,0,0,.8);color:#fff;font:9px DM Mono;letter-spacing:.08em;opacity:0;transform:translateY(5px);transition:.25s}
+.featured-project:hover .hover-hint{opacity:1;transform:none}
+.project-modal{width:min(1180px,94vw);max-height:94vh;padding:20px;background:#0b0b0b;color:var(--fg);border:1px solid #333;overflow:auto}
+.modal-close{display:block;float:none;margin:0 0 15px auto}
+.modal-viewer{position:relative;min-height:360px;height:min(68vh,760px);display:grid;place-items:center;background:#050505;overflow:hidden}
+.modal-main{display:block;width:100%;height:100%;object-fit:contain;transition:opacity .2s ease}.modal-main.switching{opacity:.12}
+.modal-arrow{position:absolute;top:50%;z-index:2;width:46px;height:46px;border:1px solid #555;border-radius:50%;background:rgba(0,0,0,.65);color:#fff;cursor:pointer;transform:translateY(-50%)}
+.modal-arrow:hover{background:#fff;color:#000}.modal-prev{left:16px}.modal-next{right:16px}
+.modal-count{position:absolute;right:16px;bottom:13px;padding:7px 9px;background:rgba(0,0,0,.7);font:10px DM Mono}
+.modal-copy{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;padding:25px 0 20px}
+.project-modal .modal-copy h2{margin:0 0 8px}.modal-copy .modal-meta{margin:0}
+.modal-description{max-width:540px;margin:0;color:#bbb;font-size:13px;line-height:1.65}
+.modal-thumbs{display:flex;gap:8px;padding:14px 0 2px;border-top:1px solid #292929;overflow-x:auto}
+.modal-thumbs button{flex:0 0 84px;width:84px;height:64px;padding:0;border:1px solid #333;background:#000;cursor:pointer;opacity:.45}
+.modal-thumbs button.active,.modal-thumbs button:hover{border-color:#fff;opacity:1}.modal-thumbs img{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:720px){.modal-viewer{height:52vh;min-height:280px}.modal-copy{grid-template-columns:1fr;gap:16px}.modal-arrow{width:38px;height:38px}.modal-prev{left:8px}.modal-next{right:8px}.hover-hint{display:none}}

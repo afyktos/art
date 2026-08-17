@@ -22,6 +22,8 @@ Then visit `http://localhost:8000`.
 
 ## Before publishing
 
-- Replace the black files inside `images/` with your real JPG artwork, keeping the same filenames.
-- Replace `your@email.com` in `index.html`.
+- Replace `your@email.com` in `index.html` with the contact email you want visitors to use.
+- Replace `images/project-01.jpg` through `project-06.jpg` with final high-resolution cover artwork.
+- Add the final two Mount Omni logo exports inside `images/mount-omni/` when ready.
+- Keep every image inside its existing folder so all galleries continue to work.
 - Confirm project names, dates, credits and external links.

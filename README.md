@@ -1,29 +1,29 @@
 # Afyktos — Art & Design
 
-Static graphic-design portfolio prepared for GitHub Pages.
+Static portfolio built for GitHub Pages.
 
-## Preview locally
+## Edit the site
 
-Open `index.html` in a browser, or run a simple local server:
+- `index.html` — all titles, project credits, descriptions and gallery images.
+- `styles.css` — fonts, sizes, spacing, colors and layout.
+- `script.js` — hover slideshows, popup galleries and mobile menu.
+- `assets/` — optimized website images.
 
-```bash
-python -m http.server 8000
-```
+The files contain clearly labelled sections so they are easy to find with `Ctrl + F` in VS Code.
 
-Then visit `http://localhost:8000`.
+## Preview changes
 
-## Publish with GitHub Pages
+1. Open the project folder in VS Code.
+2. Open `index.html`.
+3. Use Microsoft's **Live Preview** extension.
+4. Save with `Ctrl + S` to refresh the preview.
 
-1. Create a new public GitHub repository.
-2. Upload all files from this folder to the repository root.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select `main`, folder `/ (root)`, then **Save**.
+## Replace a project image
 
-## Before publishing
+The easiest method is to replace an existing file inside `assets/` with a new image using exactly the same filename and extension.
 
-- Replace `your@email.com` in `index.html` with the contact email you want visitors to use.
-- Replace `images/project-01.jpg` through `project-06.jpg` with final high-resolution cover artwork.
-- Add the final two Mount Omni logo exports inside `images/mount-omni/` when ready.
-- Keep every image inside its existing folder so all galleries continue to work.
-- Confirm project names, dates, credits and external links.
+For best performance, use square WebP images around 1600 × 1600 pixels.
+
+## Publish changes
+
+Open **Source Control** in VS Code, stage the changes, write a short commit message, commit, and select **Sync Changes**. GitHub Pages will update automatically.

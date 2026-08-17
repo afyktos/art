@@ -1,112 +1,147 @@
-const filters = document.querySelectorAll('.filter');
-const projects = document.querySelectorAll('.project');
-const modal = document.querySelector('.project-modal');
-const menuButton = document.querySelector('.menu-toggle');
-const nav = document.querySelector('#main-nav');
-const modalMain = modal.querySelector('.modal-main');
-const modalThumbs = modal.querySelector('.modal-thumbs');
-const modalCount = modal.querySelector('.modal-count');
+/* ============================================================
+   AFYKTOS PORTFOLIO — INTERACTIONS
+   You normally do not need to edit this file.
+   ============================================================ */
+
+const projects = document.querySelectorAll(".project");
+const galleryTriggers = document.querySelectorAll(".project, .gallery-trigger");
+const modal = document.querySelector(".project-modal");
+const modalMain = modal.querySelector(".modal-main");
+const modalThumbs = modal.querySelector(".modal-thumbs");
+const modalCount = modal.querySelector(".modal-count");
+const menuButton = document.querySelector(".menu-toggle");
+const navigation = document.querySelector("#main-nav");
+
 let currentGallery = [];
-let currentIndex = 0;
+let currentImageIndex = 0;
 
-document.querySelector('#year').textContent = new Date().getFullYear();
+/* Automatically displays the current year in the footer. */
+document.querySelector("#year").textContent = new Date().getFullYear();
 
-filters.forEach(button => button.addEventListener('click', () => {
-  filters.forEach(item => item.classList.remove('active'));
-  button.classList.add('active');
-  const selected = button.dataset.filter;
-  projects.forEach(project => {
-    const categories = project.dataset.category.split(' ');
-    project.classList.toggle('hidden', selected !== 'all' && !categories.includes(selected));
-  });
-}));
-
-document.querySelectorAll('[data-hover]').forEach(project => {
-  const image = project.querySelector('.art img');
-  const frames = project.dataset.hover.split('|');
-  let frame = 0;
+/* ==================== HOVER IMAGE ROTATION ==================== */
+document.querySelectorAll("[data-hover]").forEach((project) => {
+  const image = project.querySelector(".project-image img");
+  const images = project.dataset.hover.split("|");
+  let imageIndex = 0;
   let timer;
-  frames.forEach(source => { const preload = new Image(); preload.src = source; });
 
-  const showFrame = index => {
-    image.classList.add('switching');
-    window.setTimeout(() => {
-      image.src = frames[index];
-      image.classList.remove('switching');
-    }, 130);
-  };
-
-  project.addEventListener('mouseenter', () => {
-    timer = window.setInterval(() => {
-      frame = (frame + 1) % frames.length;
-      showFrame(frame);
-    }, 1050);
+  images.forEach((source) => {
+    const preload = new Image();
+    preload.src = source;
   });
-  project.addEventListener('mouseleave', () => {
+
+  function changeImage(index) {
+    image.classList.add("switching");
+    window.setTimeout(() => {
+      image.src = images[index];
+      image.classList.remove("switching");
+    }, 120);
+  }
+
+  project.addEventListener("mouseenter", () => {
+    timer = window.setInterval(() => {
+      imageIndex = (imageIndex + 1) % images.length;
+      changeImage(imageIndex);
+    }, 1100);
+  });
+
+  project.addEventListener("mouseleave", () => {
     window.clearInterval(timer);
-    frame = 0;
-    showFrame(0);
+    imageIndex = 0;
+    changeImage(0);
   });
 });
 
+/* ==================== PROJECT GALLERY ==================== */
 function showGalleryImage(index) {
-  if (!currentGallery.length) return;
-  currentIndex = (index + currentGallery.length) % currentGallery.length;
-  modalMain.classList.add('switching');
+  if (currentGallery.length === 0) return;
+
+  currentImageIndex = (index + currentGallery.length) % currentGallery.length;
+  modalMain.classList.add("switching");
+
   window.setTimeout(() => {
-    modalMain.src = currentGallery[currentIndex];
-    modalMain.alt = `${modal.querySelector('#modal-title').textContent} — image ${currentIndex + 1}`;
-    modalMain.classList.remove('switching');
+    modalMain.src = currentGallery[currentImageIndex];
+    modalMain.alt = `${modal.querySelector("#modal-title").textContent} — image ${currentImageIndex + 1}`;
+    modalMain.classList.remove("switching");
   }, 100);
-  modalCount.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(currentGallery.length).padStart(2, '0')}`;
-  modalThumbs.querySelectorAll('button').forEach((button, buttonIndex) => {
-    button.classList.toggle('active', buttonIndex === currentIndex);
+
+  modalCount.textContent = `${String(currentImageIndex + 1).padStart(2, "0")} / ${String(currentGallery.length).padStart(2, "0")}`;
+
+  modalThumbs.querySelectorAll("button").forEach((button, buttonIndex) => {
+    button.classList.toggle("active", buttonIndex === currentImageIndex);
   });
 }
 
-function openProject(project) {
-  modal.querySelector('#modal-title').textContent = project.dataset.title;
-  modal.querySelector('.modal-meta').textContent = project.dataset.meta;
-  modal.querySelector('.modal-description').textContent = project.dataset.description || '';
-  currentGallery = project.dataset.gallery
-    ? project.dataset.gallery.split('|')
-    : [project.querySelector('.art img').getAttribute('src')];
-  modalThumbs.replaceChildren(...currentGallery.map((source, index) => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.setAttribute('aria-label', `View image ${index + 1}`);
-    const thumb = document.createElement('img');
-    thumb.src = source;
-    thumb.alt = '';
-    button.append(thumb);
-    button.addEventListener('click', () => showGalleryImage(index));
-    return button;
-  }));
+function openProject(item) {
+  modal.querySelector("#modal-title").textContent = item.dataset.title;
+  modal.querySelector(".modal-meta").textContent = item.dataset.meta;
+  modal.querySelector(".modal-description").textContent = item.dataset.description || "";
+
+  const fallbackImage = item.querySelector("img")?.getAttribute("src");
+  currentGallery = item.dataset.gallery
+    ? item.dataset.gallery.split("|")
+    : [fallbackImage];
+
+  modalThumbs.replaceChildren();
+
+  currentGallery.forEach((source, index) => {
+    const button = document.createElement("button");
+    const thumbnail = document.createElement("img");
+    button.type = "button";
+    button.setAttribute("aria-label", `View image ${index + 1}`);
+    thumbnail.src = source;
+    thumbnail.alt = "";
+    button.append(thumbnail);
+    button.addEventListener("click", () => showGalleryImage(index));
+    modalThumbs.append(button);
+  });
+
   modal.showModal();
+  document.body.classList.add("modal-open");
   showGalleryImage(0);
 }
 
-projects.forEach(project => {
-  project.addEventListener('click', () => openProject(project));
-  project.addEventListener('keydown', event => {
-    if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openProject(project); }
+function closeProject() {
+  modal.close();
+  document.body.classList.remove("modal-open");
+}
+
+galleryTriggers.forEach((item) => {
+  item.addEventListener("click", () => openProject(item));
+  item.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openProject(item);
+    }
   });
 });
 
-modal.querySelector('.modal-close').addEventListener('click', () => modal.close());
-modal.querySelector('.modal-prev').addEventListener('click', () => showGalleryImage(currentIndex - 1));
-modal.querySelector('.modal-next').addEventListener('click', () => showGalleryImage(currentIndex + 1));
-modal.addEventListener('click', event => { if (event.target === modal) modal.close(); });
-modal.addEventListener('keydown', event => {
-  if (event.key === 'ArrowLeft') showGalleryImage(currentIndex - 1);
-  if (event.key === 'ArrowRight') showGalleryImage(currentIndex + 1);
+document.querySelector(".print-open").addEventListener("click", () => {
+  document.querySelector(".print-art").click();
 });
 
-menuButton.addEventListener('click', () => {
-  const isOpen = nav.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(isOpen));
+modal.querySelector(".modal-close").addEventListener("click", closeProject);
+modal.querySelector(".modal-prev").addEventListener("click", () => showGalleryImage(currentImageIndex - 1));
+modal.querySelector(".modal-next").addEventListener("click", () => showGalleryImage(currentImageIndex + 1));
+
+modal.addEventListener("click", (event) => {
+  if (event.target === modal) closeProject();
 });
-nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-  nav.classList.remove('open');
-  menuButton.setAttribute('aria-expanded', 'false');
-}));
+modal.addEventListener("close", () => document.body.classList.remove("modal-open"));
+modal.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") showGalleryImage(currentImageIndex - 1);
+  if (event.key === "ArrowRight") showGalleryImage(currentImageIndex + 1);
+});
+
+/* ==================== MOBILE MENU ==================== */
+menuButton.addEventListener("click", () => {
+  const menuIsOpen = navigation.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(menuIsOpen));
+});
+
+navigation.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navigation.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+  });
+});

@@ -45,15 +45,11 @@ button:focus-visible,
   outline-offset: 5px;
 }
 
-.noise {
-  display: none;
-}
-
 /* Real paper wear, painted as section backgrounds so artwork and type stay clean. */
 .hero,
 .covers-section,
 .identity-section {
-  background-image: url("assets/grunge-overlay-soft.webp");
+  background-image: url("assets/grunge-final.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -61,7 +57,7 @@ button:focus-visible,
 
 .print-section,
 .contact {
-  background-image: url("assets/grunge-overlay-dark-soft.webp");
+  background-image: url("assets/grunge-final-dark.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -484,6 +480,12 @@ button:focus-visible,
 
 /* ==================== 11. MOBILE ==================== */
 @media (max-width: 720px) {
+  .hero,
+  .covers-section,
+  .identity-section,
+  .print-section,
+  .contact { background-attachment: scroll; }
+
   .site-header { height: 70px; }
   .brand { width: 112px; height: 48px; }
   .menu-toggle { display: block; }

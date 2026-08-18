@@ -1,6 +1,6 @@
 # Afyktos — Art & Design
 
-Independent art direction and graphic design for music.
+Independent art direction.
 
 The portfolio features selected cover artwork, physical packaging, print work and identity design created for artists and independent releases.
 

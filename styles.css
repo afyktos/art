@@ -186,6 +186,18 @@ button { font: inherit; }
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 54px 20px;
 }
+
+/* STRONGEST WORK FIRST — change these numbers only to change the order. */
+.project:nth-child(1)  { order: 1; }  /* RocAmeriKKKa III */
+.project:nth-child(2)  { order: 2; }  /* Mantequilla */
+.project:nth-child(3)  { order: 3; }  /* Blaq Cinema */
+.project:nth-child(6)  { order: 4; }  /* Gawd Gawd */
+.project:nth-child(10) { order: 5; }  /* Rap Manifesto */
+.project:nth-child(4)  { order: 6; }  /* Locked Door */
+.project:nth-child(9)  { order: 7; }  /* The Twilight Zone */
+.project:nth-child(5)  { order: 8; }  /* Introspection */
+.project:nth-child(7)  { order: 9; }  /* Kingpen */
+.project:nth-child(8)  { order: 10; } /* Snowbound Fiction / Mia Wallace */
 .project { min-width: 0; cursor: pointer; transition: transform 0.35s ease; }
 .project:hover { transform: translateY(-5px); }
 .project-image {
@@ -256,7 +268,7 @@ button { font: inherit; }
   font-weight: 600;
   line-height: 1.08;
   letter-spacing: 0.025em;
-  word-spacing: 0.16em;
+  word-spacing: -0.08em;
 }
 .print-copy p { max-width: 390px; color: #66625b; font-size: 14px; line-height: 1.7; }
 

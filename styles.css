@@ -224,7 +224,12 @@ button { font: inherit; }
   align-items: baseline;
   border-top: 1px solid var(--line);
 }
-.project-caption h3 { margin: 0; font: 500 12px var(--title-font); text-transform: uppercase; }
+.project-caption h3 {
+  margin: 0;
+  font: 700 12px var(--body-font);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
 .project-caption p {
   margin: 0;
   color: var(--muted-text);
@@ -249,8 +254,9 @@ button { font: inherit; }
   font-family: var(--title-font);
   font-size: clamp(38px, 6vw, 82px);
   font-weight: 600;
-  line-height: 0.92;
-  letter-spacing: -0.06em;
+  line-height: 1.08;
+  letter-spacing: 0.025em;
+  word-spacing: 0.16em;
 }
 .print-copy p { max-width: 390px; color: #66625b; font-size: 14px; line-height: 1.7; }
 
@@ -289,18 +295,18 @@ button { font: inherit; }
   font-family: var(--title-font);
   font-size: clamp(46px, 8vw, 126px);
   font-weight: 600;
-  line-height: 0.9;
-  letter-spacing: -0.075em;
+  line-height: 0.96;
+  letter-spacing: -0.02em;
 }
 .contact h2 em { -webkit-text-stroke-color: #050505; }
 .contact > p { margin-bottom: 55px; color: #555; font-size: 14px; }
 .email-link {
   border-bottom: clamp(3px, 0.5vw, 7px) solid #050505;
   font-family: var(--title-font);
-  font-size: clamp(30px, 6vw, 90px);
+  font-size: clamp(30px, 5vw, 76px);
   font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.065em;
+  line-height: 1.05;
+  letter-spacing: 0;
 }
 .contact-footer {
   margin-top: 120px;

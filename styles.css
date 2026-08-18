@@ -46,16 +46,25 @@ button:focus-visible,
 }
 
 .noise {
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-  pointer-events: none;
-  opacity: 0.22;
-  mix-blend-mode: soft-light;
-  background-image: url("assets/grunge-texture.webp");
+  display: none;
+}
+
+/* Real paper wear, painted as section backgrounds so artwork and type stay clean. */
+.hero,
+.covers-section,
+.identity-section {
+  background-image: url("assets/grunge-overlay-soft.webp");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.print-section,
+.contact {
+  background-image: url("assets/grunge-overlay-dark-soft.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* ==================== 3. HEADER ==================== */
@@ -191,7 +200,7 @@ button:focus-visible,
 }
 
 /* ==================== 6. COVER PROJECTS ==================== */
-.covers-section { background: #090909; }
+.covers-section { background-color: #090909; }
 
 /* Every project occupies one cell, so there is no empty row. */
 .cover-grid {
@@ -264,7 +273,7 @@ button:focus-visible,
 }
 
 /* ==================== 7. PRINT ==================== */
-.print-section { background: #eeeae1; color: #111; }
+.print-section { background-color: #eeeae1; color: #111; }
 .print-section .eyebrow,
 .print-section .section-heading p { color: #68655e; }
 .print-layout {
@@ -298,7 +307,7 @@ button:focus-visible,
 }
 
 /* ==================== 8. IDENTITY / LOGOS ==================== */
-.identity-section { background: #070707; }
+.identity-section { background-color: #070707; }
 .marks-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -357,7 +366,7 @@ button:focus-visible,
 }
 
 /* ==================== 9. CONTACT ==================== */
-.contact { padding: 120px var(--side-space) 32px; background: #f4f4f1; color: #050505; }
+.contact { padding: 120px var(--side-space) 32px; background-color: #f4f4f1; color: #050505; }
 .contact .eyebrow { color: #555; }
 .contact h2 {
   margin: 55px 0 28px;

@@ -1,5 +1,7 @@
 # Afyktos — Art & Design
 
-Official portfolio site for Afyktos.
+Official art direction and graphic design portfolio — covers, physical packaging, print and identity.
 
-© 2026 Afyktos. All rights reserved. Artwork, visual assets, music-related materials and site presentation may not be reproduced or redistributed without permission.
+**Live:** https://afyktos.github.io/art/
+
+© 2026 Afyktos. All rights reserved. Artwork, visual assets and original portfolio materials may not be reproduced, redistributed or reused without permission.

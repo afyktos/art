@@ -1,14 +1,4 @@
-/* ============================================================
-   AFYKTOS PORTFOLIO — EASY EDIT VERSION
-
-   QUICK CHANGES
-   - Colors and fonts: SETTINGS below
-   - Main title: search .hero h1
-   - Project grid: search .cover-grid
-   - Popup gallery: search PROJECT POPUP
-   ============================================================ */
-
-/* ==================== 1. SETTINGS ==================== */
+/* Base */
 :root {
   --background: #050505;
   --text: #f4f4f1;
@@ -16,13 +6,11 @@
   --line: #292929;
   --side-space: clamp(20px, 4vw, 64px);
 
-  /* CHANGE FONTS HERE */
   --title-font: "Anton", Arial, sans-serif;
   --body-font: "Manrope", Arial, sans-serif;
   --small-font: "DM Mono", monospace;
 }
 
-/* ==================== 2. BASIC SETTINGS ==================== */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -37,7 +25,6 @@ img { max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
 
-/* Clear keyboard focus without changing the visual style for mouse users. */
 a:focus-visible,
 button:focus-visible,
 .project:focus-visible {
@@ -45,25 +32,7 @@ button:focus-visible,
   outline-offset: 5px;
 }
 
-/* Real paper wear, painted as section backgrounds so artwork and type stay clean. */
-.hero,
-.covers-section,
-.identity-section {
-  background-image: url("assets/grunge-final.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.print-section,
-.contact {
-  background-image: url("assets/grunge-final-dark.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-/* ==================== 3. HEADER ==================== */
+/* Header */
 .site-header {
   position: absolute;
   z-index: 10;
@@ -94,7 +63,7 @@ button:focus-visible,
   font: 11px var(--small-font);
 }
 
-/* ==================== 4. HOME / HERO ==================== */
+/* Hero */
 .hero {
   position: relative;
   min-height: 100svh;
@@ -114,7 +83,6 @@ button:focus-visible,
 .hero-kicker { margin: 0; display: flex; align-items: center; gap: 10px; }
 .hero-kicker span { width: 34px; height: 1px; background: var(--text); }
 
-/* CHANGE MAIN TITLE FONT, SIZE AND SPACING HERE */
 .hero h1 {
   position: relative;
   z-index: 2;
@@ -169,7 +137,7 @@ button:focus-visible,
   letter-spacing: -0.12em;
 }
 
-/* ==================== 5. SHARED SECTIONS ==================== */
+/* Sections */
 .section { padding: 120px var(--side-space); }
 .section + .section { border-top: 1px solid rgb(255 255 255 / 4%); }
 .section-heading {
@@ -195,27 +163,25 @@ button:focus-visible,
   line-height: 1.65;
 }
 
-/* ==================== 6. COVER PROJECTS ==================== */
+/* Selected work */
 .covers-section { background-color: #090909; }
 
-/* Every project occupies one cell, so there is no empty row. */
 .cover-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 54px 20px;
 }
 
-/* STRONGEST WORK FIRST — change these numbers only to change the order. */
-.project:nth-child(1)  { order: 1; }  /* RocAmeriKKKa III */
-.project:nth-child(2)  { order: 2; }  /* Mantequilla */
-.project:nth-child(3)  { order: 3; }  /* Blaq Cinema */
-.project:nth-child(6)  { order: 4; }  /* Gawd Gawd */
-.project:nth-child(10) { order: 5; }  /* Rap Manifesto */
-.project:nth-child(4)  { order: 6; }  /* Locked Door */
-.project:nth-child(9)  { order: 7; }  /* The Twilight Zone */
-.project:nth-child(5)  { order: 8; }  /* Introspection */
-.project:nth-child(7)  { order: 9; }  /* Kingpen */
-.project:nth-child(8)  { order: 10; } /* Snowbound Fiction / Mia Wallace */
+.project:nth-child(1)  { order: 1; }
+.project:nth-child(2)  { order: 2; }
+.project:nth-child(3)  { order: 3; }
+.project:nth-child(6)  { order: 4; }
+.project:nth-child(10) { order: 5; }
+.project:nth-child(4)  { order: 6; }
+.project:nth-child(9)  { order: 7; }
+.project:nth-child(5)  { order: 8; }
+.project:nth-child(7)  { order: 9; }
+.project:nth-child(8)  { order: 10; }
 .project { min-width: 0; cursor: pointer; transition: transform 0.3s ease; }
 .project:hover { transform: translateY(-3px); }
 .project-image {
@@ -268,7 +234,7 @@ button:focus-visible,
   text-transform: uppercase;
 }
 
-/* ==================== 7. PRINT ==================== */
+/* Print */
 .print-section { background-color: #eeeae1; color: #111; }
 .print-section .eyebrow,
 .print-section .section-heading p { color: #68655e; }
@@ -302,7 +268,7 @@ button:focus-visible,
   cursor: pointer;
 }
 
-/* ==================== 8. IDENTITY / LOGOS ==================== */
+/* Identity */
 .identity-section { background-color: #070707; }
 .marks-grid {
   display: grid;
@@ -311,7 +277,6 @@ button:focus-visible,
 }
 .marks-grid figure { margin: 0; }
 
-/* Portrait images remain fully visible instead of being cropped. */
 .identity-image {
   width: 100%;
   height: auto;
@@ -336,7 +301,6 @@ button:focus-visible,
   text-transform: uppercase;
 }
 
-/* The apparel image sits deliberately in the center, not in a random half-empty row. */
 .identity-wide {
   grid-column: 1 / -1;
   width: calc(50% - 10px);
@@ -361,7 +325,7 @@ button:focus-visible,
   opacity: 0.55;
 }
 
-/* ==================== 9. CONTACT ==================== */
+/* Contact */
 .contact { padding: 120px var(--side-space) 32px; background-color: #f4f4f1; color: #050505; }
 .contact .eyebrow { color: #555; }
 .contact h2 {
@@ -397,7 +361,7 @@ button:focus-visible,
 .contact-footer div { display: flex; justify-content: center; gap: 20px; }
 .contact-footer > span:last-child { text-align: right; }
 
-/* ==================== 10. PROJECT POPUP / GALLERY ==================== */
+/* Project gallery */
 .project-modal {
   width: min(1100px, calc(100vw - 32px));
   height: min(900px, calc(100dvh - 32px));
@@ -427,7 +391,6 @@ button:focus-visible,
 }
 .modal-count { color: var(--muted-text); font: 10px var(--small-font); }
 
-/* The whole image is always visible. Nothing is cropped. */
 .modal-viewer {
   position: relative;
   min-height: 0;
@@ -478,14 +441,8 @@ button:focus-visible,
 .modal-thumbs button.active { opacity: 1; border-color: #fff; }
 .modal-thumbs img { width: 100%; height: 100%; display: block; object-fit: contain; }
 
-/* ==================== 11. MOBILE ==================== */
+/* Mobile */
 @media (max-width: 720px) {
-  .hero,
-  .covers-section,
-  .identity-section,
-  .print-section,
-  .contact { background-attachment: scroll; }
-
   .site-header { height: 70px; }
   .brand { width: 112px; height: 48px; }
   .menu-toggle { display: block; }

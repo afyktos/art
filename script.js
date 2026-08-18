@@ -1,8 +1,3 @@
-/* ============================================================
-   AFYKTOS PORTFOLIO — INTERACTIONS
-   You normally do not need to edit this file.
-   ============================================================ */
-
 const projects = document.querySelectorAll(".project");
 const galleryTriggers = document.querySelectorAll(".project, .gallery-trigger");
 const modal = document.querySelector(".project-modal");
@@ -15,10 +10,9 @@ const navigation = document.querySelector("#main-nav");
 let currentGallery = [];
 let currentImageIndex = 0;
 
-/* Automatically displays the current year in the footer. */
 document.querySelector("#year").textContent = new Date().getFullYear();
 
-/* ==================== HOVER IMAGE ROTATION ==================== */
+// Project previews
 document.querySelectorAll("[data-hover]").forEach((project) => {
   const image = project.querySelector(".project-image img");
   const images = project.dataset.hover.split("|");
@@ -52,7 +46,7 @@ document.querySelectorAll("[data-hover]").forEach((project) => {
   });
 });
 
-/* ==================== PROJECT GALLERY ==================== */
+// Gallery
 function showGalleryImage(index) {
   if (currentGallery.length === 0) return;
 
@@ -133,7 +127,7 @@ modal.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") showGalleryImage(currentImageIndex + 1);
 });
 
-/* ==================== MOBILE MENU ==================== */
+// Mobile navigation
 menuButton.addEventListener("click", () => {
   const menuIsOpen = navigation.classList.toggle("open");
   menuButton.setAttribute("aria-expanded", String(menuIsOpen));

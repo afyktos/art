@@ -1,29 +1,26 @@
 # Afyktos — Art & Design
 
-Static portfolio built for GitHub Pages.
+Independent art direction and graphic design for music.
 
-## Edit the site
+The portfolio features selected cover artwork, physical packaging, print work and identity design created for artists and independent releases.
 
-- `index.html` — all titles, project credits, descriptions and gallery images.
-- `styles.css` — fonts, sizes, spacing, colors and layout.
-- `script.js` — hover slideshows, popup galleries and mobile menu.
-- `assets/` — optimized website images.
+## Selected work
 
-The files contain clearly labelled sections so they are easy to find with `Ctrl + F` in VS Code.
+- RocAmeriKKKa III — Flee Lord × Eto
+- Mantequilla — Recognize Ali × Giallo Point
+- Blaq Cinema — Blaq Medici × Agallah The Don
+- Gawd Gawd — Ferris Blusa
+- Rap Manifesto — 518 Petrovic
 
-## Preview changes
+## Website
 
-1. Open the project folder in VS Code.
-2. Open `index.html`.
-3. Use Microsoft's **Live Preview** extension.
-4. Save with `Ctrl + S` to refresh the preview.
+[afyktos.github.io/portfolio](https://afyktos.github.io/portfolio/)
 
-## Replace a project image
+## Contact
 
-The easiest method is to replace an existing file inside `assets/` with a new image using exactly the same filename and extension.
+- [Email](mailto:afyktos@gmail.com)
+- [Instagram](https://instagram.com/afyktos_kvl)
+- [YouTube](https://youtube.com/@afyktos)
+- [Bandcamp](https://afyktos.bandcamp.com)
 
-For best performance, use square WebP images around 1600 × 1600 pixels.
-
-## Publish changes
-
-Open **Source Control** in VS Code, stage the changes, write a short commit message, commit, and select **Sync Changes**. GitHub Pages will update automatically.
+© Afyktos. All rights reserved. Artwork may not be reproduced or used without permission.

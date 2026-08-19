@@ -6,4 +6,4 @@ Cover artwork, physical packaging, print, merchandise and visual identity.
 
 **Live:** https://afyktos.github.io/art/
 
-All artwork, visual assets and original portfolio materials are © Afyktos. All rights reserved. No reproduction, redistribution or reuse without permission.
+© Afyktos. All rights reserved. Artwork, visual assets and original portfolio materials may not be reproduced, redistributed or reused without permission.
